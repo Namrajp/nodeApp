@@ -8,8 +8,13 @@ router.get('/', (req, res, next) => {
     })
 })
 router.post('/', (req, res, next) => {
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    }
     res.status(200).json({
-        message: "Post requested to /products being handled"
+        message: "Post requested to /products being handled",
+        createdProduct: product
     })
 })
 // handle individual product requests

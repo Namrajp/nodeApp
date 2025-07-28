@@ -8,8 +8,13 @@ router.get('/', (req, res, next) => {
 })
 // handles request to create order
 router.post('/', (req, res, next) => {
+    const order = {
+        productId: req.body.productId,
+        quantity: req.body.quantity
+    }
     res.status(201).json({
-        message: "Orders to /orders being created"
+        message: "Orders to /orders being created",
+        order: order
     })
 })
 // handle individual order requests
