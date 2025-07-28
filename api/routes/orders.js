@@ -6,11 +6,13 @@ router.get('/', (req, res, next) => {
         message: "Orders to /orders being fetched"
     })
 })
+// handles request to create order
 router.post('/', (req, res, next) => {
     res.status(201).json({
         message: "Orders to /orders being created"
     })
 })
+// handle individual order requests
 router.get('/:orderId', (req, res, next) => {
     res.status(200).json({
         message: 'Order details',

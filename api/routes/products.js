@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// handle get request 
 router.get('/', (req, res, next) => {
     res.status(200).json({
         message: "Get requested to /products being handled"
@@ -11,6 +12,7 @@ router.post('/', (req, res, next) => {
         message: "Post requested to /products being handled"
     })
 })
+// handle individual product requests
 router.get('/:productId', (req, res, next) => {
     const id = req.params.productId;
     if (id === 'secret') {
