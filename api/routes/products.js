@@ -3,13 +3,26 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
     res.status(200).json({
-        message: "Get requested being handled"
+        message: "Get requested to /products being handled"
     })
 })
 router.post('/', (req, res, next) => {
     res.status(200).json({
-        message: "Post requested being handled"
+        message: "Post requested to /products being handled"
     })
+})
+router.get('/:productId', (req, res, next) => {
+    const id = req.params.productId;
+    if (id === 'secret') {
+        res.status(200).json({
+            message: 'You discovered the secret ID',
+            id: id
+        })
+    } else {
+        res.status(200).json({
+            message: 'You passed an ID'
+        })
+    }
 })
 
 module.exports = router;
