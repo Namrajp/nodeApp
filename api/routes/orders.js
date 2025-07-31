@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+// handles request to all orders
 router.get('/', (req, res, next) => {
     res.status(200).json({
         message: "Orders to /orders being fetched"
@@ -24,7 +24,7 @@ router.get('/:orderId', (req, res, next) => {
         orderId: req.params.orderId
     })
 })
-
+// handle delete order requests
 router.delete('/:orderId', (req, res, next) => {
     res.status(200).json({
         message: 'Order deleted !',

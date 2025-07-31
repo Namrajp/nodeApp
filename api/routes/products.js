@@ -7,6 +7,7 @@ router.get('/', (req, res, next) => {
         message: "Get requested to /products being handled"
     })
 })
+// handle post new products to server
 router.post('/', (req, res, next) => {
     const product = {
         name: req.body.name,
